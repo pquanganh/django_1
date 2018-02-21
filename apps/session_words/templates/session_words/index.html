@@ -1,0 +1,22 @@
+<h1>Add a new word:</h1>
+<h3>
+	<form action="/session_words/process" method="POST">
+	{% csrf_token %}
+	<input type="text" name = "word"><br>
+	<h1>Color:</h1>
+	<input type="radio" name="color" value="red">Red<br>
+	<input type="radio" name="color" value="blue">Blue<br>
+	<input type="radio" name="color" value="green">Green<br><br>
+	<input type="checkbox" name="font" value="big">Show in big fonts!<br><br>
+	<input type="submit" value="Add to Session">
+	</form>
+</h3>
+<h3><form action="/session_words/clear" method="POST">
+	{% csrf_token %}
+	<input type="submit" value="Clear Session">
+	</form>
+</h3>
+
+{% for word in request.session.word %}
+<h2 style="color: {{color}};">{{word}}</h2>
+{% endfor %}

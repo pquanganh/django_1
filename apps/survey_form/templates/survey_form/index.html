@@ -1,0 +1,18 @@
+<h1>Survey</h1>
+<h3>
+	<form action="/survey_form/process" method="POST">
+	{% csrf_token %}
+	Name:<br><input type="text" name = "name"><br>
+	Dojo Location:<br>
+	<select name="location">
+		<option>Dallas</option>
+		<option>Los Angeles</option>
+	</select><br>
+	Fav Language:<br>
+	<select name="language">
+		<option>Python</option>
+		<option>HTML</option>
+	</select><br><br>
+	<input type="submit" value="Submit">
+	</form>
+</h3>
